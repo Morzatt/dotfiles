@@ -1,0 +1,31 @@
+* {
+    border-color:               #e3daa8;
+    selected-normal-foreground: #e3daa8;
+    normal-foreground:          #e3daa8;
+    // selected-normal-background: #2b2b42;
+    selected-normal-background: #000000;
+    normal-background:          #11111b;
+    bg-selected:                #000000;
+    input-bar-bg:               #181825;
+    // background-color:           #181825;
+    background-color:           #000000;
+    lightred:                   rgba ( 204, 85, 51, 100 % );
+    font:                       "JetBrainsMono Nerd Font 12";
+    list-font:                  "JetBrainsMono Nerd Font 11";
+    dark:                       rgba ( 28, 28, 28, 100 % );
+    transparent:                transparent;
+    // background-alt:             #26263d;
+    background-alt:             #000000;
+    selected:                   #2B2B42;
+    // background:                 #181825;
+    background:                 #000000;
+    foreground:                 #e3daa8;
+    foreground-alt:             #e3daa8;
+    border-radius:              4px;
+    border-radius-win:          5px;
+    border-selected:            var(foreground);
+    location-var:               center;
+    anchor-var:                 center;
+    width-var:                  500px;
+    lines-var:                  10;
+}
