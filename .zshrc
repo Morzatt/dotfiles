@@ -105,4 +105,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias vi=nvim
+alias ld=lazydocker
+alias lg=lazygit
 alias obsidian='$HOME/.local/bin/obsidian.AppImage' 
