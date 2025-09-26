@@ -18,7 +18,29 @@ return {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     -- Mason must be loaded before its dependents so we need to set it up here.
     -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-    { 'mason-org/mason.nvim', opts = {} },
+    {
+      'mason-org/mason.nvim',
+      opts = {
+        ensure_installed = {
+          'cssls',
+          'dockerls',
+          'eslint',
+          'gopls ',
+          'html',
+          'kube-linter',
+          'kubescape',
+          'lua_ls',
+          'marksman',
+          'rust_analyzer',
+          'stylua',
+          'svelte',
+          'tailwindcss',
+          'ts_ls',
+          'csharpier',
+          'omnisharp',
+        },
+      },
+    },
     'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -156,6 +178,7 @@ return {
       automatic_installation = false,
       handlers = {
         function(server_name)
+          local servers = require 'config.lsp.server.servers'
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
