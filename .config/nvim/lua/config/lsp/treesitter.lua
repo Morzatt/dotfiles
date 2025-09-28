@@ -51,7 +51,9 @@ return { -- Highlight, edit, and navigate code
     highlight = {
       enable = true,
     },
-    indent = { enable = true },
+
+    additional_vim_regex_highlighting = { 'ruby' },
+    indent = { enable = true, disable = { 'ruby' } },
   },
   -- There are additional nvim-treesitter modules that you can use to interact
   -- with nvim-treesitter. You should go explore a few and see what interests you:

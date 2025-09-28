@@ -76,7 +76,7 @@ return {
         map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
         map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
-        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = true })
         local client = vim.lsp.get_client_by_id(event.data.client_id)
 
         -- Check if a client exists and if it supports document highlighting
@@ -178,7 +178,7 @@ return {
       automatic_installation = false,
       handlers = {
         function(server_name)
-          local servers = require 'config.lsp.server.servers'
+          vim.api.nvim_echo({ { server_name } }, true, {})
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling

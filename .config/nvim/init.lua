@@ -24,6 +24,7 @@ vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.o.number = true
 vim.o.relativenumber = true
+
 -- Set tab to 2 spaces
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -67,9 +68,9 @@ vim.o.splitbelow = true
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
-vim.o.list = true
+-- vim.o.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-vim.opt.listchars = { tab = '  ', trail = ' ', nbsp = ' ' }
+-- vim.opt.listchars = { tab = '  ', trail = ' ', nbsp = ' ' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -203,6 +204,7 @@ require('lazy').setup({
       },
     },
   },
+  { 'Hoffs/omnisharp-extended-lsp.nvim', lazy = true },
 
   require 'config.colorschemes.kanagawa',
   require 'config.plugins.todo',

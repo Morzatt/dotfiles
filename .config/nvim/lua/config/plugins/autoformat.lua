@@ -36,5 +36,16 @@ return { -- Autoformat
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
+
+    formatters = {
+      -- Set to false to disable merging the config with the base definition
+      inherit = true,
+      -- When inherit = true, add these additional arguments to the beginning of the command.
+      -- This can also be a function, like args
+      prepend_args = { '--use-tabs' },
+      -- When inherit = true, add these additional arguments to the end of the command.
+      -- This can also be a function, like args
+      append_args = { '--trailing-comma' },
+    },
   },
 }
