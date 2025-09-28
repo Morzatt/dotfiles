@@ -64,20 +64,31 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
+        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = true })
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        -- vim.api.nvim_echo({ { 'expr' } }, true, {})
+
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
         map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         map('grf', require('telescope.builtin').treesitter, '[G]oto [F]unctions')
         map('grc', require('telescope.builtin').commands, '[G]oto [C]ommands')
         map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-        map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+
+        -- map('grd',require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+
+        map('grd', function()
+          if client.name == 'omnisharp' then
+            require('omnisharp_extended').telescope_lsp_definitions()
+          else
+            require('telescope.builtin').lsp_definitions()
+          end
+        end, '[G]oto [D]efinition')
+
         map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
         map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
         map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
         map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
-
-        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = true })
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
 
         -- Check if a client exists and if it supports document highlighting
         if client and client.server_capabilities and client.server_capabilities.documentHighlight then
@@ -178,7 +189,6 @@ return {
       automatic_installation = false,
       handlers = {
         function(server_name)
-          vim.api.nvim_echo({ { server_name } }, true, {})
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling

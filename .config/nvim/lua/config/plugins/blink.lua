@@ -104,7 +104,7 @@ return { -- Autocompletion
       },
       accept = {},
       ghost_text = {
-        enabled = true,
+        enabled = false,
       },
     },
 

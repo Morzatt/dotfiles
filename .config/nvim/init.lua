@@ -188,7 +188,7 @@ rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 --
-require('lazy').setup({
+LazyVim = require('lazy').setup({
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   -- See `:help gitsigns` to understand what the configuration keys do
 
