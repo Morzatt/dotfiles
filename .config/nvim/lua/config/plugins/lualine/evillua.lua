@@ -81,7 +81,15 @@ ins_left {
   color = { fg = colors.blue }, -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
-
+--
+-- ins_left {
+--   function()
+--     return 'UPPER'
+--   end,
+--   color = { fg = colors.blue }, -- Sets highlighting of component
+--   padding = { left = 0, right = 1 }, -- We don't need space before this
+-- }
+--
 ins_left {
   -- mode component
   'mode',

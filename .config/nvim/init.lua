@@ -1,9 +1,5 @@
 -- Appearance
 vim.opt.termguicolors = true
--- vim.opt.pumheight = 10
--- vim.opt.cmdheight = 0
--- vim.opt.conceallevel = 0
--- vim.opt.showtabline = 0
 vim.opt.winborder = 'rounded'
 
 -- Update and backups

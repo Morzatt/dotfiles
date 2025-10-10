@@ -5,6 +5,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$HOME/go
 export ZSH="$HOME/.oh-my-zsh"
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/amro-custom.omp.json)"
 # eval "$(oh-my-posh init zsh --config amro)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -108,3 +109,11 @@ alias vi=nvim
 alias ld=lazydocker
 alias lg=lazygit
 alias obsidian='$HOME/.local/bin/obsidian.AppImage' 
+
+# pnpm
+export PNPM_HOME="/home/morzatt/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
