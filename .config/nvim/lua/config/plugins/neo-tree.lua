@@ -43,10 +43,11 @@ return {
       },
       filesystem = {
         filtered_items = {
-          visible = true,
+          visible = false,
           hide_dotfiles = false,
           hide_gitignored = false,
-          hide_hidden = false,
+          hide_hidden = true,
+          hide_by_pattern = { '__pycache__' },
         },
       },
     }
