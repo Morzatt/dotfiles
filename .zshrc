@@ -108,7 +108,7 @@ alias vim=nvim
 alias vi=nvim
 alias ld=lazydocker
 alias lg=lazygit
-alias obsidian='$HOME/.local/bin/obsidian.AppImage' 
+export GEMINI_API_KEY="$(cat /home/morzatt/gemini_api_key)"
 
 # pnpm
 export PNPM_HOME="/home/morzatt/.local/share/pnpm"
