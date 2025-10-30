@@ -31,6 +31,7 @@ return { -- Autocompletion
     },
 
     'folke/lazydev.nvim',
+    { 'fang2hou/blink-copilot' },
   },
   --- @module 'blink.cmp'
   --- @type blink.cmp.Config
@@ -109,7 +110,9 @@ return { -- Autocompletion
     },
 
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'minuet' },
+      -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'minuet' },
+      -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         minuet = {
           name = 'minuet',
@@ -121,6 +124,12 @@ return { -- Autocompletion
           score_offset = 50, -- Gives minuet higher priority among suggestions
         },
         lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+        copilot = {
+          name = 'copilot',
+          module = 'blink-copilot',
+          score_offset = 100,
+          async = true,
+        },
       },
     },
 

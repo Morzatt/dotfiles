@@ -91,6 +91,12 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+--  - va)  - [V]isually select [A]round [)]paren
+--  - yinq - [Y]ank [I]nside [N]ext [Q]uote
+--  - ci'  - [C]hange [I]nside [']quote
+-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+-- - sd'   - [S]urround [D]elete [']quotes
+-- - sr)'  - [S]urround [R]eplace [)] [']
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -214,8 +220,8 @@ LazyVim = require('lazy').setup({
   require 'config.plugins.alpha',
   require 'config.plugins.barbar',
   require 'config.plugins.telescope',
-  require 'config.plugins.minuteai',
-  -- require 'config.plugins.codecompanion',
+  -- require 'config.plugins.minuteai',
+  -- require 'config.plugins.copilot',
   require 'config.plugins.blink',
   require 'config.plugins.ufo',
   require 'config.plugins.whichkey',
