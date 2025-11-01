@@ -1,0 +1,144 @@
+
+# Harlequin Configuration File - Neovim Key Bindings
+# To use this keymap, run Harlequin with the --keymap-name option:
+# harlequin --keymap-name "neovim_keymap" --keymap-name "vscode"
+# We load the default "vscode" keymap last to ensure all standard bindings are included.
+
+# ----------------------------------------------------------------------
+# RESULTS VIEWER & DATA CATALOG MOTIONS
+# Each binding is defined as a separate table in the 'neovim_keymap' array.
+# ----------------------------------------------------------------------
+
+# Cursor Down (j) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "j"
+action = "results_viewer.cursor_down"
+key_display = "j"
+
+# Cursor Down (j) - Data Catalog
+[[keymaps.neovim_keymap]]
+keys = "j"
+action = "data_catalog.cursor_down"
+key_display = "j"
+
+
+# Cursor Up (k) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "k"
+action = "results_viewer.cursor_up"
+key_display = "k"
+
+# Cursor Up (k) - Data Catalog
+[[keymaps.neovim_keymap]]
+keys = "k"
+action = "data_catalog.cursor_up"
+key_display = "k"
+
+
+# Cursor Left (h) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "h"
+action = "results_viewer.cursor_left"
+key_display = "h"
+
+
+# Cursor Right (l) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "l"
+action = "results_viewer.cursor_right"
+key_display = "l"
+
+
+# Half Page Down (Ctrl-d) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "ctrl+d"
+action = "results_viewer.scroll_page_down"
+key_display = "^d"
+
+# Half Page Up (Ctrl-u) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "ctrl+u"
+action = "results_viewer.scroll_page_up"
+key_display = "^u"
+
+
+# Go to First Row (gg) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "g,g"
+action = "results_viewer.cursor_first_row"
+key_display = "gg"
+
+
+# Go to Last Row (G) - Results Viewer
+[[keymaps.neovim_keymap]]
+keys = "G"
+action = "results_viewer.cursor_last_row"
+key_display = "G"
+
+
+# ----------------------------------------------------------------------
+# GLOBAL COMMANDS
+# ----------------------------------------------------------------------
+
+# Save Query (:w)
+[[keymaps.neovim_keymap]]
+keys = "ctrl+s"
+action = "app.save_query"
+key_display = ":w"
+
+# Quit App (:q)
+[[keymaps.neovim_keymap]]
+keys = "ctrl+q"
+action = "app.quit"
+key_display = ":q"
+
+# Toggle Full Screen (^f)
+[[keymaps.neovim_keymap]]
+keys = "ctrl+f"
+action = "app.toggle_full_screen"
+key_display = "^f"
+
+# ----------------------------------------------------------------------
+# WINDOW / PANE MANAGEMENT (Mimicking C-w motions)
+# ----------------------------------------------------------------------
+
+# Focus Next Panel (^w l)
+[[keymaps.neovim_keymap]]
+keys = "ctrl+w,l"
+action = "app.focus_next"
+key_display = "^w l"
+
+# Focus Previous Panel (^w h)
+[[keymaps.neovim_keymap]]
+keys = "ctrl+w,h"
+action = "app.focus_previous"
+key_display = "^w h"
+
+# ----------------------------------------------------------------------
+# QUERY EDITOR MOTIONS (Using Alt or Ctrl to avoid conflict with typing)
+# ----------------------------------------------------------------------
+
+# Move to start of line (^ or 0)
+[[keymaps.neovim_keymap]]
+keys = "alt+0"
+action = "query_editor.cursor_line_start"
+key_display = "A-0"
+
+# Move to end of line ($)
+[[keymaps.neovim_keymap]]
+keys = "alt+$" # Note: $ key is Shift+4 on many layouts
+action = "query_editor.cursor_line_end"
+key_display = "A-$"
+
+# Next word (w)
+[[keymaps.neovim_keymap]]
+keys = "alt+w"
+action = "query_editor.cursor_word_right"
+key_display = "A-w"
+
+# Previous word (b)
+[[keymaps.neovim_keymap]]
+keys = "alt+b"
+action = "query_editor.cursor_word_left"
+key_display = "A-b"
+
