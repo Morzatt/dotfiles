@@ -10,6 +10,7 @@ vim.opt.writebackup = true
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 vim.opt.swapfile = false
+vim.opt.conceallevel = 2
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -221,7 +222,7 @@ LazyVim = require('lazy').setup({
   require 'config.plugins.barbar',
   require 'config.plugins.telescope',
   -- require 'config.plugins.minuteai',
-  -- require 'config.plugins.copilot',
+  require 'config.plugins.copilot',
   require 'config.plugins.blink',
   require 'config.plugins.ufo',
   require 'config.plugins.whichkey',
@@ -230,6 +231,7 @@ LazyVim = require('lazy').setup({
 
   require 'config.lsp.lspconfig',
   require 'config.lsp.treesitter',
+  require 'config.plugins.obsidian',
 
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.lint',

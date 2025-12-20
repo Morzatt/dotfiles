@@ -111,8 +111,8 @@ return { -- Autocompletion
 
     sources = {
       -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'minuet' },
-      -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+      -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         minuet = {
           name = 'minuet',
