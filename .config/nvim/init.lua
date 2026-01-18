@@ -233,7 +233,7 @@ LazyVim = require('lazy').setup({
   require 'config.lsp.treesitter',
   require 'config.plugins.obsidian',
 
-  -- require 'kickstart.plugins.debug',
+  require 'config.plugins.debug',
   -- require 'kickstart.plugins.lint',
 }, {
   ui = {

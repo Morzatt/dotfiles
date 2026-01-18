@@ -9,6 +9,7 @@
 return {
   -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
+
   -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
@@ -23,6 +24,7 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap-python',
   },
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
@@ -95,6 +97,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'debugpy',
       },
     }
 
@@ -144,5 +147,25 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+    -- Install python specific config
+    local path = '/usr/bin/python'
+    require('dap-python').setup(path)
+    table.insert(dap.configurations.python, {
+      type = 'python',
+      request = 'attach',
+      name = 'Attach (Port 5678)',
+      connect = {
+        host = '127.0.0.1',
+        port = 5678,
+      },
+      cwd = vim.fn.getcwd(), -- This prevents the E475 error
+      pathMappings = {
+        {
+          localRoot = vim.fn.getcwd(),
+          remoteRoot = vim.fn.getcwd(),
+        },
+      },
+    })
+    require('dap.ext.vscode').load_launchjs(nil, { python = { 'python' } })
   end,
 }
