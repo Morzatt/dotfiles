@@ -221,7 +221,6 @@ LazyVim = require('lazy').setup({
   require 'config.plugins.alpha',
   require 'config.plugins.barbar',
   require 'config.plugins.telescope',
-  -- require 'config.plugins.minuteai',
   require 'config.plugins.copilot',
   require 'config.plugins.blink',
   require 'config.plugins.ufo',
