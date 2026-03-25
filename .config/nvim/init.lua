@@ -209,9 +209,11 @@ LazyVim = require('lazy').setup({
   },
   { 'Hoffs/omnisharp-extended-lsp.nvim', lazy = true },
 
+
   require 'config.colorschemes.kanagawa',
   require 'config.plugins.todo',
   require 'config.plugins.lualine.evillua',
+  require 'config.plugins.markdown',
 
   require 'config.plugins.mini',
   require 'config.plugins.lazygit',
@@ -226,7 +228,7 @@ LazyVim = require('lazy').setup({
   require 'config.plugins.ufo',
   require 'config.plugins.whichkey',
   require 'config.plugins.lazydev',
-  require 'config.plugins.autoformat',
+  -- require 'config.plugins.autoformat',
 
   require 'config.lsp.lspconfig',
   require 'config.lsp.treesitter',

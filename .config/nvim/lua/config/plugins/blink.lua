@@ -2,6 +2,16 @@ return { -- Autocompletion
   'saghen/blink.cmp',
   event = 'VimEnter',
   version = '1.*',
+  keys = {
+    {
+      '<M-c>',
+      function()
+        require('blink.cmp').show { providers = { 'copilot' } }
+      end,
+      mode = 'i',
+      desc = 'Show Copilot suggestions',
+    },
+  },
   dependencies = {
     -- Snippet Engine
     {
@@ -110,7 +120,7 @@ return { -- Autocompletion
     },
 
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         copilot = {

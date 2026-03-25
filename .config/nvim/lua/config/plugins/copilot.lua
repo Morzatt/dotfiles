@@ -6,10 +6,10 @@ return {
   opts = {
     suggestion = {
       enabled = not vim.g.ai_cmp,
-      auto_trigger = true,
+      auto_trigger = false,
       hide_during_completion = vim.g.ai_cmp,
       keymap = {
-        accept = '<leader>a', -- handled by blink.cmp
+        accept = '<leader>a',
         next = '<M-]>',
         prev = '<M-[>',
       },
